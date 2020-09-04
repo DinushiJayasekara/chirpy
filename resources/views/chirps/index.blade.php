@@ -1,14 +1,8 @@
-@extends('layouts.app')
+<x-app>
 
-@section('sidebar')
-    @include('_sidebar-links')
-@endsection
+    <div>
+        @include('_publish-chirp-panel')
+        @include('_timeline')
+    </div>
 
-@section('content')
-    @include('_publish-chirp-panel')
-    @include('_timeline')
-@endsection
-
-@section('friends-list')
-    @include('_friends-list')
-@endsection
+</x-app>
