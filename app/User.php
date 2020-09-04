@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'avatar', 'name', 'email', 'password',
     ];
 
     /**
@@ -39,9 +39,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
-        return "https://api.adorable.io/avatars/200/" . $this->email . "@adorable.png";
+        // return "https://api.adorable.io/avatars/200/" . $this->username . "@adorable.png";
+        return asset("storage/" . $value);
     }
 
     public function timeline()
@@ -56,6 +57,13 @@ class User extends Authenticatable
     public function chirps()
     {
         return $this->hasMany(Chirp::class)->latest();
+    }
+
+    public function path($append = '')
+    {
+        $path = route('profile', $this->username);
+
+        return $append ? "{$path}/{$append}" : $path;
     }
 
 }

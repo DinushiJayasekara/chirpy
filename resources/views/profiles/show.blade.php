@@ -5,8 +5,10 @@
         <div class="relative">
 
             <img src="/images/default-profile-banner.jpg" alt="Profile Banner" class="rounded-lg mb-2">
-    
-            <img src="{{ $user->avatar }}" alt="" class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2" style="left: 50%;" width="150px">
+
+            <img src="{{ $user->avatar }}" alt=""
+                class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
+                style="left: 50%;" width="150px">
 
         </div>
 
@@ -18,10 +20,12 @@
             </div>
 
             <div class="flex">
-                <a href=""
-                    class="bg-teal-100 hover:bg-teal-200 border border-gray-300 rounded-full px-4 py-2 text-xs mr-2">
-                    Edit Profile
-                </a>
+                @can('edit', $user)
+                    <a href="{{ $user->path('edit') }}"
+                        class="bg-teal-100 hover:bg-teal-200 border border-gray-300 rounded-full px-4 py-2 text-xs mr-2">
+                        Edit Profile
+                    </a>
+                @endcan
                 <x-follow-button :user="$user"></x-follow-button>
             </div>
 
