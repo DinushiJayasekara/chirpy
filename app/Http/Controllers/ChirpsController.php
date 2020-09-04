@@ -18,7 +18,7 @@ class ChirpsController extends Controller
             'body' => $attributes['body']
         ]);
 
-        return redirect('/home');
+        return redirect()->route('home');
     }
 
     public function index()

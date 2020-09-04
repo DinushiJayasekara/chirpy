@@ -1,4 +1,4 @@
-<x-master>
+<x-master class="m-5">
     <div class="container mx-auto px-6 py-4 bg-gray-400 rounded-lg">
         <div class="row justify-content-center">
             <div class="col-md-8">

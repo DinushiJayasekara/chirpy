@@ -21,9 +21,9 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/chirps', 'ChirpsController@index')->name('home');
     Route::post('/chirps', 'ChirpsController@store');
+    Route::post('/profiles/{user:name}/follow', 'FollowsController@store');
 });
 
-Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
+Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');
 
 Auth::routes();
-

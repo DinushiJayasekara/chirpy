@@ -22,7 +22,9 @@
 
     <nav class="flex items-center justify-between flex-wrap bg-white-100 px-6 py-2">
         <div class="flex items-center flex-shrink-0 mr-6">
-            <img src="/images/logo1.png" width="140px" alt="Chirpy">
+            <a href="{{ route('home') }}">
+                <img src="/images/logo1.png" width="140px" alt="Chirpy">
+            </a>
         </div>
         <div class="block lg:hidden">
             <button
@@ -50,7 +52,7 @@
 
                 @else
 
-                    <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
+                    <a class="inline-block px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
                         href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
