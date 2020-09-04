@@ -1,5 +1,5 @@
 <x-master>
-    <div class="container mx-auto px-6 py-4 bg-gray-400 rounded-lg">
+    <div class="container mx-auto px-6 py-4 bg-gray-300 rounded-lg">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -58,7 +58,7 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="px-3 py-2 rounded-full text-sm uppercase bg-teal-500 text-white hover:bg-teal-600">
+                                    <button type="submit" class="px-3 py-2 rounded-full text-sm uppercase bg-gray-500 text-white hover:bg-teal-500">
                                         {{ __('Login') }}
                                     </button>
 
