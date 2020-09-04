@@ -20,50 +20,57 @@
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
-    <ul class="navbar-nav ml-auto">
-        <!-- Authentication Links -->
-        @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-            </li>
-            @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-            @endif
-        @else
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->username }} <span class="caret"></span>
-                </a>
+    <nav class="flex items-center justify-between flex-wrap bg-white-100 px-6 py-2">
+        <div class="flex items-center flex-shrink-0 mr-6">
+            <img src="/images/logo1.png" width="140px" alt="Chirpy">
+        </div>
+        <div class="block lg:hidden">
+            <button
+                class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-sm lg:flex-grow">
+            </div>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
+            <div>
+
+                @guest
+                    <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
+                        href="{{ route('login') }}">{{ __('Login') }}</a>
+
+                    @if (Route::has('register'))
+                        <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
+                            href="{{ route('register') }}">{{ __('Register') }}</a>
+                    @endif
+
+                @else
+
+                    <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
+                        href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                </div>
-            </li>
-        @endguest
-    </ul>
+
+                @endguest
+            </div>
+        </div>
+    </nav>
 </head>
 
 <body>
-    <div id="app">
-
-        <section class="px-8 py-4 mb-6">
-            <header class="container mx-auto">
-                <h1><img src="/images/logo1.png" width="140px" alt="Chirpy"></h1>
-            </header>
-        </section>
+    <div id="app" class="mt-10">
 
         {{ $slot }}
-        
+
     </div>
 </body>
 
