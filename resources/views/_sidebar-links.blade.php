@@ -1,30 +1,30 @@
 <ul>
     <li>
         <a href="{{ route('home') }}"
-            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
+            class="text-lg inline-block leading-none px-3 pb-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 lg:mt-0 mb-1">
             Home
         </a>
     </li>
     <li>
         <a href="/explore"
-            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
+            class="text-lg inline-block leading-none p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-2 lg:mt-0 mb-1">
             Explore
         </a>
     </li>
     <li>
         <a href="{{ route('profile', auth()->user()) }}"
-            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
+            class="text-lg inline-block leading-none p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-2 lg:mt-0 mb-1">
             Profile
         </a>
     </li>
     <li>
         <a href="/profiles/{{ auth()->user()->username }}/edit"
-            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
+            class="text-lg inline-block leading-none p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-2 lg:mt-0 mb-1">
             Settings
         </a>
     </li>
     <li>
-        <a class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4"
+        <a class="text-lg inline-block leading-none p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-2 lg:mt-0 mb-1"
             href="{{ route('logout') }}"
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             {{ __('Logout') }}

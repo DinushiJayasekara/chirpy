@@ -52,7 +52,8 @@ class User extends Authenticatable
 
         return Chirp::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
-            ->latest()->get();
+            ->withLikes()
+            ->latest()->paginate(50);
     }
 
     public function chirps()
@@ -67,4 +68,8 @@ class User extends Authenticatable
         return $append ? "{$path}/{$append}" : $path;
     }
 
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

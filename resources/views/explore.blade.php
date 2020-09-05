@@ -1,12 +1,4 @@
 <x-app>
-    <div class="flex justify-center">
-        <div class="text-gray-700 text-center px-4 pb-2">
-            <h1 class="text-3xl text-gray-700 mb-2">
-                Explore other Chirpies!
-            </h1>
-        </div>
-    </div>
-
     <div>
         @for ($i = 0; $i < count($users); $i += 2)
             <div class="flex mb-4">

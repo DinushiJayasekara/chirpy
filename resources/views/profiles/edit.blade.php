@@ -81,10 +81,15 @@
 
         </div>
 
-        <div class="mb-6">
+        <div class="mb-6 items-center">
             <button type="submit"
-                class="px-3 py-2 rounded-full text-sm uppercase bg-teal-500 text-white hover:bg-teal-600">Edit
+                class="px-5 py-2 rounded-full text-sm uppercase bg-teal-500 text-white hover:bg-teal-600 mr-4">Edit
                 Profile</button>
+
+            <a href="{{ $user->path() }}"
+                class="bg-gray-100 hover:bg-teal-100 border border-gray-300 rounded-full px-4 py-2 text-sm">
+                Cancel
+            </a>
         </div>
 
     </form>

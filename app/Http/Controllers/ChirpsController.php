@@ -23,6 +23,9 @@ class ChirpsController extends Controller
 
     public function index()
     {
+
+        // return auth()->user()->timeline();
+
         return view('chirps.index', [
             'chirps' => auth()->user()->timeline()
         ]);

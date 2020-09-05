@@ -71,8 +71,8 @@
     <div class="flex-center position-ref full-height">
 
         <div class="content">
-            <div class="title m-b-md">
-                Chirpy
+            <div class="title">
+                <img src="images/logo1.png" alt="Logo" width="45%">
             </div>
 
             <div class="links">
