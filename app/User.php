@@ -42,7 +42,8 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         // return "https://api.adorable.io/avatars/200/" . $this->username . "@adorable.png";
-        return asset("storage/" . $value);
+        // return asset("storage/" . $value);
+        return asset($value ? ("storage/" . $value) : ("https://api.adorable.io/avatars/200/" . $this->username . "@adorable.png"));
     }
 
     public function timeline()

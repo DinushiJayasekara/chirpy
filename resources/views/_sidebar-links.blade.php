@@ -1,42 +1,37 @@
 <ul>
     <li>
-        <a href="{{ route('home') }}" class="font-bold text-lg mb-4 block">
+        <a href="{{ route('home') }}"
+            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
             Home
         </a>
     </li>
     <li>
-        <a href="/explore" class="font-bold text-lg mb-4 block">
+        <a href="/explore"
+            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
             Explore
         </a>
     </li>
     <li>
-        <a href="#" class="font-bold text-lg mb-4 block">
-            Notifications
-        </a>
-    </li>
-    <li>
-        <a href="#" class="font-bold text-lg mb-4 block">
-            Messages
-        </a>
-    </li>
-    <li>
-        <a href="#" class="font-bold text-lg mb-4 block">
-            Bookmarks
-        </a>
-    </li>
-    <li>
-        <a href="#" class="font-bold text-lg mb-4 block">
-            Lists
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('profile', auth()->user()) }}" class="font-bold text-lg mb-4 block">
+        <a href="{{ route('profile', auth()->user()) }}"
+            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
             Profile
         </a>
     </li>
     <li>
-        <a href="/" class="font-bold text-lg mb-4 block">
-            More
+        <a href="/profiles/{{ auth()->user()->username }}/edit"
+            class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4">
+            Settings
         </a>
+    </li>
+    <li>
+        <a class="text-lg inline-block leading-none border border-gray-300 p-3 hover:border-gray-100 rounded font-bold text-gray-900 hover:text-gray-700 mt-4 lg:mt-0 mb-4"
+            href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </li>
 </ul>

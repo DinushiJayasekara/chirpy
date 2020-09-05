@@ -35,36 +35,6 @@
                 </svg>
             </button>
         </div>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="text-sm lg:flex-grow">
-            </div>
-
-            <div>
-
-                @guest
-                    <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
-                        href="{{ route('login') }}">{{ __('Login') }}</a>
-
-                    @if (Route::has('register'))
-                        <a class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
-                            href="{{ route('register') }}">{{ __('Register') }}</a>
-                    @endif
-
-                @else
-
-                    <a class="inline-block px-4 py-2 leading-none border rounded text-teal-900 border-teal hover:border-transparent hover:text-teal-700 hover:bg-white mt-4 lg:mt-0"
-                        href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-
-                @endguest
-            </div>
-        </div>
     </nav>
 </head>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
@@ -22,13 +23,17 @@ class ProfilesController extends Controller
     {
         $attributes = request()->validate([
             'username' => ['required', 'string', 'max:255', 'alpha_dash', Rule::unique('users')->ignore($user)],
-            'avatar' => ['required', 'file'],
+            'avatar' => ['file'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user)],
             'password' => ['required', 'string', 'min:8', 'max:255', 'confirmed'],
         ]);
 
-        $attributes['avatar'] = request('avatar')->store('avatars');
+        if (request('avatar')) {
+            $attributes['avatar'] = request('avatar')->store('avatars');
+        }
+
+        $attributes['password'] = Hash::make($attributes['password']);
 
         $user->update($attributes);
 
