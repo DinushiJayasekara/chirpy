@@ -10,7 +10,7 @@ trait Likable
     public function scopeWithLikes(Builder $query)
     {
         $query->leftJoinSub(
-            'select chirp_id, sum(liked) likes, sum(!liked) dislikes from likes group by chirp_id',
+            'SELECT chirp_id, SUM(liked) likes, SUM(!liked) dislikes FROM likes GROUP BY chirp_id',
             'likes',
             'likes.chirp_id',
             'chirps.id'
@@ -19,11 +19,14 @@ trait Likable
 
     public function like($user = null, $liked = true)
     {
-        $this->likes()->updateOrCreate([
-            'user_id' => $user ? $user->id : auth()->id(),
-        ], [
-            'liked' => $liked
-        ]);
+        $this->likes()->updateOrCreate(
+            [
+                'user_id' => $user ? $user->id : auth()->id(),
+            ],
+            [
+                'liked' => $liked,
+            ]
+        );
     }
     
     public function dislike($user = null)

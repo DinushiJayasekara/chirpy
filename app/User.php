@@ -52,8 +52,10 @@ class User extends Authenticatable
 
         return Chirp::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
+            ->latest()
             ->withLikes()
-            ->latest()->paginate(50);
+            ->orderByDesc('id')
+            ->paginate(50);
     }
 
     public function chirps()
