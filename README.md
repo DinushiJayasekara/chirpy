@@ -1,4 +1,4 @@
-# InstagramProject
+# Chirpy
 
 A web application based on Twitter and Laracasts Tutorial of Tweety <br>
 @ https://laracasts.com/series/laravel-6-from-scratch <br>
