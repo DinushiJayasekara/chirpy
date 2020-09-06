@@ -1,3 +1,11 @@
+# InstagramProject
+
+A web application based on Twitter and Laracasts Tutorial of Tweety <br>
+@ https://laracasts.com/series/laravel-6-from-scratch <br>
+<br>
+
+Preview: ![Preview](https://raw.githubusercontent.com/DinushiJayasekara/chirpy/master/preview.png)
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
