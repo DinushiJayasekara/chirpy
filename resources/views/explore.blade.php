@@ -15,7 +15,7 @@
                     </div>
                 {{-- @endif --}}
 
-                {{-- @if (auth()->user()->id != $users[$i + 1]->id) --}}
+                @if ($i < count($users) - 1)
                     <div class="w-1/2 h-12 mt-3">
                         <a href="{{ $users[$i + 1]->path() }}" class="flex items-center mb-5">
                             <img src="{{ $users[$i + 1]->avatar }}" alt="{{ $users[$i + 1]->username }}'s avatar"
@@ -26,7 +26,7 @@
                             </div>
                         </a>
                     </div>
-                {{-- @endif --}}
+                @endif
             </div>
 
         @endfor

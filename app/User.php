@@ -55,7 +55,7 @@ class User extends Authenticatable
             ->latest()
             ->withLikes()
             ->orderByDesc('id')
-            ->paginate(50);
+            ->paginate(10);
     }
 
     public function chirps()
