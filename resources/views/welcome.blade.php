@@ -68,11 +68,11 @@
 </head>
 
 <body>
-    <div class="flex-center position-ref full-height">
+    <div class="flex-center position-ref full-height" style="background: #d5e0ffab;">
 
         <div class="content">
             <div class="title">
-                <img src="images/logo1.png" alt="Logo" width="45%">
+                <img src="images/logo.png" alt="Logo" width="45%">
             </div>
 
             <div class="links">
